@@ -1,0 +1,71 @@
+<form [formGroup]="addProductForm" class="p-5 bg-light">
+    <h2 class="text-center fs-4">{{ isEditMode ? 'Update' : 'Add' }} Product</h2>
+    <div class="form-group mt-4">
+      <label class="mb-1" for="productName">Product Name</label>
+      <input type="text" class="form-control" id="productName" placeholder="Enter product name" formControlName="productName">
+      <div *ngIf="addProductForm.get('productName')?.invalid && addProductForm.get('productName')?.touched">
+        <span class="mt-2 error-message">Please enter product name.</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="productPhotoUrl">Product Photo</label>
+      <input type="file" class="form-control" id="productPhotoUrl" (change)="onFileSelected($event)" accept="image/*">
+      <img *ngIf="imageUrl" [src]="imageUrl" alt="Product Photo" class="preview-image">
+    </div>
+    <div class="form-group mt-4">
+      <label class="mb-1" for="quantity">Quantity</label>
+      <select class="form-control" id="quantity" formControlName="quantity">
+        <option *ngFor="let number of quantityOptions" [value]="number">{{ number }}</option>
+      </select>
+      <div *ngIf="addProductForm.get('quantity')?.invalid && addProductForm.get('quantity')?.touched">
+        <span class="mt-2 error-message">Please select a quantity.</span>
+      </div>
+    </div>
+    
+    <div class="form-group mt-4">
+      <label class="mb-1" for="price">Price</label>
+      <input type="number" class="form-control" id="price"  min="0" placeholder="Enter price" formControlName="price">
+      <div *ngIf="addProductForm.get('price')?.invalid && addProductForm.get('price')?.touched">
+        <span class="mt-2 error-message">Please enter a valid price.</span>
+      </div>
+    </div>
+    <div class="form-group mt-4">
+        <label class="mb-1">Categories</label>
+        <div class="form-check" *ngFor="let category of productCategories">
+          <input type="checkbox" class="form-check-input" [id]="category.id" [value]="category.id" (change)="toggleCategorySelection(category.id)">
+          <label class="form-check-label" [for]="category.id">{{ category.categoryName }}</label>
+        </div>
+        <div *ngIf="addProductForm.get('productCategories')?.invalid && addProductForm.get('productCategories')?.touched">
+          <span class="mt-2 error-message">Please select at least one category.</span>
+        </div>
+      </div>
+      
+    <div mat-dialog-actions class="p-0 mt-3 d-flex justify-content-center">
+        <button
+          *ngIf="!isEditMode"
+          type="submit"
+          class="btn btn-dark buttons me-3"
+          (click)="addProduct()"
+          [disabled]="addProductForm.invalid"
+        >
+          Add
+          <i class="fa-solid fa-plus"></i>
+        </button>
+        <button
+          *ngIf="isEditMode"
+          type="submit"
+          class="btn btn-dark buttons me-3"
+          (click)="onEditProduct()"
+          [disabled]="addProductForm.invalid"
+        >
+          Update
+          <i class="fa-solid fa-plus"></i>
+        </button>
+        <button class="btn btn-danger buttons" mat-dialog-close (click)="close()">
+          Close
+          <i class="fa-sharp fa-solid fa-close"></i>
+        </button>
+      </div>
+      <!-- {{addProductForm.value | json}} -->
+  </form>
+  

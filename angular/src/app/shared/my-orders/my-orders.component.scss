@@ -1,0 +1,63 @@
+.product-image {
+  max-width: 100%;
+  max-height: 205px;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-cards .card {
+  border: none;
+  border-radius: 10px;
+  transition: box-shadow 0.3s ease;
+}
+
+.order-cards .card:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.star-rating {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+.star {
+  font-size: 24px;
+  cursor: pointer;
+  color: #ccc;
+}
+.star.filled {
+  color: gold;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+}
+.container {
+  margin-top: 80px;
+}
+.card {
+  border: 1px solid #dee2e6;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.btn-danger {
+  margin-top: 10px;
+}

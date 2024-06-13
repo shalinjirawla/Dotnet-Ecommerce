@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  
+    <!-- Logo on the left -->
+    <a class="navbar-brand mr-auto">
+      <i class="fa-solid fa-shop" style="color: #c3c0c0;"></i> 
+      NCoreSoft Ecommerce
+    </a>
+   
+    <!-- Toggle button for mobile -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <!-- Navigation links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto"> 
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/admin/users" routerLinkActive="active">Users</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/admin/products" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/admin/orders" routerLinkActive="active">Orders</a>
+        </li>
+      </ul>
+    </div>
+    
+    <!-- User's email and logout button -->
+    <div class="navbar-nav">
+      <span class="nav-item nav-link text-light" *ngIf="userEmail">{{ userEmail }}</span>
+      <a class="nav-item nav-link" style="cursor: pointer;" (click)="logout()">
+        <i class="fas fa-sign-out-alt text-light"></i> Logout
+      </a>
+    </div>
+</nav>

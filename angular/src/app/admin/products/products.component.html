@@ -1,0 +1,41 @@
+<div class="container d-flex justify-content-center">
+  <button *ngIf="showAddButton" class="btn btn-dark w-25 m-5" (click)="addProduct()">
+    Add Products <i class="fa-solid fa-cart-plus"></i>
+  </button>
+</div>
+
+<div class="container-fluid">
+  <div class="mb-3" *ngIf="isCategoryPage()">
+    <button class="btn btn-dark" (click)="navigateToAllProducts()">
+      <i class="fa fa-arrow-left"></i> Back
+    </button>
+  </div>  
+  <div class="row row-cols-1 row-cols-md-4">
+    <div class="col mb-4" *ngFor="let product of productList">
+      <div class="card position-relative">
+        <!-- Add overlay if product is sold out -->
+        <div *ngIf="product.quantity === 0" class="overlay"></div>
+        <img class="card-img-top" [src]="product.productPhotoUrl" alt="{{ product.productName }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ product.productName }}</h5>
+          <div class="d-flex justify-content-between align-items-center">
+            <p class="card-text mb-0">Price: {{ product.price | currency : "INR" }}</p>
+            <div *ngIf="productRatings && productRatings.data[product.id]" class="d-flex align-items-center">
+              <p class="mb-0 mr-1">{{ productRatings.data[product.id] | number:'.1-1' }} </p>
+              <ng-container *ngIf="productRatings.data[product.id] > 0">
+                <i class="fa fa-star m-1" aria-hidden="true" style="font-size: 18px; color: rgb(75, 157, 157);"></i>
+              </ng-container>
+              <ng-container *ngIf="product.timesSold > 0" class="times-sold-badge"> | {{ product.timesSold }} </ng-container>
+            </div>
+          </div>
+          <!-- Disable Add to Cart button if product is out of stock -->
+          <button class="btn btn-secondary mt-2" [disabled]="product.quantity === 0" (click)="addToCart(product.id)">
+            Add to Cart <i class="fa-solid fa-shopping-cart"></i>
+          </button>
+          <!-- Show "Sold Out" badge if product is sold out -->
+          <span *ngIf="product.quantity === 0" class="sold-out-badge">Sold Out</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

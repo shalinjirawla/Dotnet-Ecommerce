@@ -1,0 +1,70 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand">
+      <i class="fa-solid fa-shop" style="color: #c3c0c0;"></i> 
+      NCoreSoft Ecommerce
+    </a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link text-light" [routerLink]="['/landing/kids', 3]">Kids</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" [routerLink]="['/landing/men', 1]">Men</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" [routerLink]="['/landing/women', 2]">Women</a>
+      </li>
+    </ul>
+    <!-- Search Form -->
+    <div class="col-auto">
+      <div class="input-group">
+        <input class="form-control" type="search" placeholder="Search products here.." aria-label="Search" style="width: 230px;">
+        <div class="input-group-append">
+          <button class="btn btn-outline-warning ml-2" type="submit" style="margin-left: 10px;">Search</button>
+        </div>
+      </div>
+    </div>
+
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link text-light" style="cursor: pointer;" (click)="showLoginMessage()">
+          <i class="fa fa-shopping-cart"></i>
+        </a>
+      </li>
+      <ng-container *ngIf="isLoggedIn(); else notLoggedIn">
+        <!-- Logged in user -->
+        <li class="nav-item">
+          <a class="nav-link text-light" routerLink="/landing/my-orders">My Orders</a>
+        </li>
+        <li class="nav-item">
+          <span class="nav-link text-light">{{ userEmail }}</span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link text text-light"  style="cursor: pointer;" (click)="logout()">
+            <i class="fas fa-sign-out-alt text-light"></i> Logout
+          </a>
+        </li>
+      </ng-container>
+      <ng-template #notLoggedIn>
+        <!-- Not logged in user -->
+        <li class="nav-item">
+          <a class="nav-link text-light" [routerLink]="['/auth/login']">Login</a>
+        </li>
+      </ng-template>
+      <!-- Cart icon -->
+    </ul>
+  </div>
+</nav>
+<!-- landing-page.component.html -->
+<div class="welcome-section">
+<h1>Welcome to our Ecommerce Store!</h1>
+</div>
+<div class="container-fluid">
+<app-products></app-products>
+</div>

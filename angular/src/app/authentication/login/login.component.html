@@ -1,0 +1,112 @@
+<section class="">
+    <div class="container-fluid">
+      <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-md-9 col-lg-6 col-xl-5">
+          <img
+            src="https://img.freepik.com/free-vector/global-data-security-personal-data-security-cyber-data-security-online-concept-illustration-internet-security-information-privacy-protection_1150-37336.jpg?w=740&t=st=1692130448~exp=1692131048~hmac=66f81305049f340feabc1b65771699cca808737cd98ace292cc15c5239ca4b23"
+            class="img-fluid"
+            alt="Sample image"
+          />
+        </div>
+  
+        <div class="col-md-8 col-lg-6 col-xl-5 offset-xl-1">
+          <form class="login" [formGroup]="loginForm">
+            <div
+              class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start"
+            >
+              <h1 class="py-3">Login</h1>
+            </div>
+  
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <input
+                type="email"
+                id="form3Example3"
+                class="form-control form-control-md"
+                placeholder="Enter a valid email address"
+                formControlName="email"
+              />
+              <!-- errors in email -->
+              <div
+                *ngIf="
+                  loginForm.get('email')!.invalid &&
+                  loginForm.get('email')!.touched
+                "
+              >
+                <span
+                  class="error-message"
+                  *ngIf="loginForm.get('email')!.errors!['required']"
+                >
+                  <small>Email is required</small></span
+                >
+                <span
+                  class="error-message"
+                  *ngIf="
+                    loginForm.get('email')!.errors!['email'] ||
+                    loginForm.get('email')!.errors!['pattern']
+                  "
+                >
+                  <small>Please enter valid email</small></span
+                >
+              </div>
+            </div>
+  
+            <!-- Password input -->
+            <div class="form-outline mb-3 field">
+              <span
+                class="fa {{ eyeIcon }} eyehide"
+                (click)="hideShowPass()"
+              ></span>
+              <input
+                type="password"
+                id="form3Example4"
+                [type]="type"
+                required
+                autocomplete="off"
+                class="form-control form-control-md"
+                placeholder="Enter password"
+                formControlName="password"
+                [pattern]="patternForPassword"
+              />
+  
+              <!-- errors in password -->
+              <div
+                *ngIf="
+                  loginForm.get('password')?.invalid &&
+                  loginForm.get('password')?.touched
+                "
+              >
+                <span
+                  class="error-message"
+                  *ngIf="(loginForm.get('password')?.errors)!['required']"
+                >
+                  <small>Please enter password.</small>
+                </span>
+                <span
+                  class="error-message"
+                  *ngIf="(loginForm.get('password')?.errors)!['pattern']"
+                >
+                  *Password must contain one Uppercase,one Lowercase,one Special
+                  charecters and numbers. Password must be 8 charecters long.
+                </span>
+              </div>
+            </div>
+  
+            <div class="text-center text-lg-start mt-4 pt-2">
+              <button
+                type="button"
+                class="btn btn-primary btn-md w-25"
+                [disabled]="loginForm.invalid"
+                (click)="login()"
+              >
+                Login
+              </button>
+            </div>
+            <div class="text-center mt-2">
+              <h3>New member?? <a class="login-link" routerLink="/auth/signup">Click here to SignUp</a></h3>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>

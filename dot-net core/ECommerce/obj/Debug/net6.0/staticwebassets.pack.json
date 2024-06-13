@@ -1,0 +1,81 @@
+{
+  "Files": [
+    {
+      "Id": "F:\\Manish\\2024\\ECommerceWebApp\\ECommerceWebApp\\ECommerceBackend\\ECommerce\\wwwroot\\ProductImage\\0580b03b-cf75-4854-be8c-126dbdb52bb4.jfif",
+      "PackagePath": "staticwebassets\\ProductImage\\0580b03b-cf75-4854-be8c-126dbdb52bb4.jfif"
+    },
+    {
+      "Id": "F:\\Manish\\2024\\ECommerceWebApp\\ECommerceWebApp\\ECommerceBackend\\ECommerce\\wwwroot\\ProductImage\\216893c1-0144-4980-97d2-56d33419879e.jpg",
+      "PackagePath": "staticwebassets\\ProductImage\\216893c1-0144-4980-97d2-56d33419879e.jpg"
+    },
+    {
+      "Id": "F:\\Manish\\2024\\ECommerceWebApp\\ECommerceWebApp\\ECommerceBackend\\ECommerce\\wwwroot\\ProductImage\\224f224d-ce98-446e-b348-87256f296af3.jpeg",
+      "PackagePath": "staticwebassets\\ProductImage\\224f224d-ce98-446e-b348-87256f296af3.jpeg"
+    },
+    {
+      "Id": "F:\\Manish\\2024\\ECommerceWebApp\\ECommerceWebApp\\ECommerceBackend\\ECommerce\\wwwroot\\ProductImage\\3b360fde-8b58-4236-958f-8cc6191a457e.jfif",
+      "PackagePath": "staticwebassets\\ProductImage\\3b360fde-8b58-4236-958f-8cc6191a457e.jfif"
+    },
+    {
+      "Id": "F:\\Manish\\2024\\ECommerceWebApp\\ECommerceWebApp\\ECommerceBackend\\ECommerce\\wwwroot\\ProductImage\\4cec0ec3-f8a6-40d5-9157-146d88eae975.jfif",
+      "PackagePath": "staticwebassets\\ProductImage\\4cec0ec3-f8a6-40d5-9157-146d88eae975.jfif"
+    },
+    {
+      "Id": "F:\\Manish\\2024\\ECommerceWebApp\\ECommerceWebApp\\ECommerceBackend\\ECommerce\\wwwroot\\ProductImage\\56a81508-85d9-41ba-a988-2f9766c2315b.jpg",
+      "PackagePath": "staticwebassets\\ProductImage\\56a81508-85d9-41ba-a988-2f9766c2315b.jpg"
+    },
+    {
+      "Id": "F:\\Manish\\2024\\ECommerceWebApp\\ECommerceWebApp\\ECommerceBackend\\ECommerce\\wwwroot\\ProductImage\\64e46405-295b-42e6-a0cf-a8b98725d642.jfif",
+      "PackagePath": "staticwebassets\\ProductImage\\64e46405-295b-42e6-a0cf-a8b98725d642.jfif"
+    },
+    {
+      "Id": "F:\\Manish\\2024\\ECommerceWebApp\\ECommerceWebApp\\ECommerceBackend\\ECommerce\\wwwroot\\ProductImage\\6fd329f9-4a07-4d1f-8e0e-db3fc6c98ac6.jpeg",
+      "PackagePath": "staticwebassets\\ProductImage\\6fd329f9-4a07-4d1f-8e0e-db3fc6c98ac6.jpeg"
+    },
+    {
+      "Id": "F:\\Manish\\2024\\ECommerceWebApp\\ECommerceWebApp\\ECommerceBackend\\ECommerce\\wwwroot\\ProductImage\\81140eb3-9426-4170-8bc6-9bde2446464d.jfif",
+      "PackagePath": "staticwebassets\\ProductImage\\81140eb3-9426-4170-8bc6-9bde2446464d.jfif"
+    },
+    {
+      "Id": "F:\\Manish\\2024\\ECommerceWebApp\\ECommerceWebApp\\ECommerceBackend\\ECommerce\\wwwroot\\ProductImage\\8f53559e-9c1e-4c9f-ad40-d6f8b391e1d4.jpg",
+      "PackagePath": "staticwebassets\\ProductImage\\8f53559e-9c1e-4c9f-ad40-d6f8b391e1d4.jpg"
+    },
+    {
+      "Id": "F:\\Manish\\2024\\ECommerceWebApp\\ECommerceWebApp\\ECommerceBackend\\ECommerce\\wwwroot\\ProductImage\\c20469de-3553-4d6d-a965-de1ab4962a31.jpeg",
+      "PackagePath": "staticwebassets\\ProductImage\\c20469de-3553-4d6d-a965-de1ab4962a31.jpeg"
+    },
+    {
+      "Id": "F:\\Manish\\2024\\ECommerceWebApp\\ECommerceWebApp\\ECommerceBackend\\ECommerce\\wwwroot\\ProductImage\\c6424e38-959d-4ed5-9acd-0c1974f9903e.jpeg",
+      "PackagePath": "staticwebassets\\ProductImage\\c6424e38-959d-4ed5-9acd-0c1974f9903e.jpeg"
+    },
+    {
+      "Id": "F:\\Manish\\2024\\ECommerceWebApp\\ECommerceWebApp\\ECommerceBackend\\ECommerce\\wwwroot\\ProductImage\\e29fc6de-4010-45ea-8506-2b41ee06d50b.jfif",
+      "PackagePath": "staticwebassets\\ProductImage\\e29fc6de-4010-45ea-8506-2b41ee06d50b.jfif"
+    },
+    {
+      "Id": "F:\\Manish\\2024\\ECommerceWebApp\\ECommerceWebApp\\ECommerceBackend\\ECommerce\\wwwroot\\ProductImage\\eb47eb24-752f-4d64-b32d-f5565e80e7ae.jfif",
+      "PackagePath": "staticwebassets\\ProductImage\\eb47eb24-752f-4d64-b32d-f5565e80e7ae.jfif"
+    },
+    {
+      "Id": "F:\\Manish\\2024\\ECommerceWebApp\\ECommerceWebApp\\ECommerceBackend\\ECommerce\\wwwroot\\ProductImage\\faaab8a5-732d-48a8-8175-f79ae1f8a6e9.jpg",
+      "PackagePath": "staticwebassets\\ProductImage\\faaab8a5-732d-48a8-8175-f79ae1f8a6e9.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.ECommerce.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.ECommerce.props",
+      "PackagePath": "build\\ECommerce.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.ECommerce.props",
+      "PackagePath": "buildMultiTargeting\\ECommerce.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.ECommerce.props",
+      "PackagePath": "buildTransitive\\ECommerce.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

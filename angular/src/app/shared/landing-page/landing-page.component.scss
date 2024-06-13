@@ -1,0 +1,49 @@
+
+.navbar {
+    background-color: #fff;
+    padding: 15px 0;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    height: 40px; 
+  }
+  
+  .navbar-nav {
+    display: flex;
+    list-style: none;
+  }
+  
+  .nav-item {
+    margin-right: 15px; 
+  }
+  
+  .nav-link {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .form-inline input {
+    width: 200px;
+  }
+.welcome-section {
+  text-align: center;
+  margin-top: 50px; 
+}
+
+h1 {
+  font-size: 36px;
+  color: #333; 
+  margin-bottom: 20px;
+}
+
+.container-fluid {
+  padding: 20px; 
+}
+
+  

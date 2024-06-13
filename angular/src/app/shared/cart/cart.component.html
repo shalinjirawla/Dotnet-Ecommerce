@@ -1,0 +1,72 @@
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand">
+      <i class="fa-solid fa-shop" style="color: #c3c0c0;"></i> 
+      NCoreSoft Ecommerce
+    </a>
+    <a class="navbar-brand" style="cursor: pointer; font-size: medium;" (click)="navigateLanding()">
+        <i class="fas fa-sign-out-alt text-light"></i>
+        Back to Shopping
+      </a>
+</nav>
+  
+<div class="container mt-5">
+    <div class="row">
+        <div class="col text-center">
+            <h2 class="cart-heading">Your Cart</h2>
+            <hr>
+        </div>
+    </div>
+  
+    <div class="row" *ngIf="cartItems.length > 0">
+        <div class="col">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Product</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Total</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let cartItem of cartItems">
+                            <td>
+                                <div class="d-flex align-items-center product-name">
+                                    <img  src="{{ cartItem.product.productPhotoUrl }}" alt="{{ cartItem.product.productName }}" class="img-fluid mr-2" style="max-height: 100px;">
+                                    <span>{{ cartItem.product.productName }}</span>
+                                </div>
+                            </td>
+                            <td>{{ cartItem.product.price | currency:'INR' }}</td>
+                            <td>
+                                <input type="number" min="1" [(ngModel)]="cartItem.quantity" (click)="updateCartItem(cartItem)">
+                            </td>
+                            <td>{{ (cartItem.product.price * cartItem.quantity) | currency:'INR' }}</td>
+                            <td>
+                                <button class="btn btn-danger" (click)="deleteCartItem(cartItem.id)">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="text-right">
+                <p class="font-weight-bold total-price">Total price: {{ getTotalCartPrice() | currency:'INR' }}</p>
+            </div>
+            
+            <div class="text-center">
+                <button class="btn btn-primary" (click)="placeOrder()">Place Order</button>
+                <button class="btn btn-danger m-2" (click)="emptyCart(userId)">Empty Cart</button>
+            </div>
+        </div>
+    </div>
+    <div class="col d-flex flex-column align-items-center justify-content-center m-3" *ngIf="cartItems.length === 0">
+        
+        <h3>Your cart is empty.</h3>
+        <i class="fas fa-shopping-cart fa-5x"></i>
+    </div>
+    
+    
+</div>

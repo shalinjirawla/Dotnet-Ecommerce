@@ -1,0 +1,41 @@
+<div class="container d-flex justify-content-center">
+    <h2 class="mb-4 mt-4 content">Customers Order List</h2>
+  </div>
+  <div class="container">
+    <table class="table table table-bordered text-center">
+      <thead class="table-dark">
+        <tr>
+          <th>Order Number</th>
+          <th>User Name</th>
+          <th>Product Name</th>
+          <th>Quantity</th>  
+          <th>Total Price</th>
+          <th>Order Date</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let order of orderList">
+        <tr >
+          <td>{{ order.id }}</td>
+          <td>{{order.user.name}}</td>
+          <td>{{order.product.productName}}</td>
+          <td>{{order.quantity}}</td>
+          <td>{{ order.totalAmount| currency : "INR" }}</td>
+          <td>{{order.orderDate | date}}</td>
+          <td [ngClass]="{
+            'text-success': order.status === 'Completed',
+            'text-danger': order.status === 'Cancelled',
+            'text-primary': order.status === 'InProgress'
+          }">{{ order.status }}</td> 
+          <td>
+            <button class="btn btn-primary m-1" [disabled]="order.status === 'Completed' || order.status === 'Cancelled' " (click)="updateOrderStatus(order)">
+              
+              <i class="fa fa-pencil"></i>
+            </button>
+          </td>
+       </tr>
+      </tbody>
+    </table>
+    <div class="d-flex justify-content-center"></div>
+  </div>

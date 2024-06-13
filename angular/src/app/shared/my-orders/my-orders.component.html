@@ -1,0 +1,54 @@
+<nav class="navbar navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand">
+        <i class="fa-solid fa-shop" style="color: #c3c0c0;"></i> 
+        NCoreSoft Ecommerce
+    </a>
+    <a class="navbar-brand" style="cursor: pointer; font-size: medium;" (click)="navigateLanding()">
+        <i class="fas fa-sign-out-alt text-light"></i>
+        Back to Shopping
+    </a>
+</nav>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col">
+            <h2 class="cart-heading text-center mt-3">My Orders</h2>
+        </div>
+    </div>
+</div>
+<div class="container mt-2">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div *ngIf="orders && orders.length" class="order-cards">
+                <div *ngFor="let order of orders" class="card mb-4 shadow rounded">
+                    <div class="row g-0 align-items-center">
+                        <div class="col-md-4 text-center">
+                            <img *ngIf="order.product.productPhotoUrl" [src]="order.product.productPhotoUrl" alt="{{ order.product.productName }}" class="img-fluid product-image">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h3 class="card-title">{{ order.product.productName }}</h3>
+                                <p class="card-text">Quantity: {{ order.quantity }}</p>
+                                <p class="card-text">Total Amount: {{ order.totalAmount | currency:'INR' }}</p>
+                                <p class="card-text">Order Date: {{order.orderDate | date}}</p>
+                                <p class="card-text">Status: {{ order.status }}</p>
+                                <button (click)="cancelOrder(order.id)" *ngIf="order.status === 'InProgress'" class="btn btn-danger btn-sm">Cancel</button>
+                                <span *ngIf="order.status !== 'InProgress'" class="text-muted">Not cancellable</span>
+                            </div>
+                            <div class="star-rating">
+                                <span class="star" *ngFor="let star of stars" [class.filled]="star <= getProductRating(order.productId)" (click)="rateProduct(order.productId, star)">
+                                    &#9733;
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="!orders || orders.length === 0" class="text-center mt-5">
+                <h3>No orders found.</h3>
+                <i class="fas fa-box-open fa-5x text-muted"></i>
+            </div>
+        </div>
+    </div>
+</div>
+

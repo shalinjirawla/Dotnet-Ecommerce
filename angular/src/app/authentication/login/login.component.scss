@@ -1,0 +1,22 @@
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+  }
+  
+  .error-message {
+    color: red;
+  }
+  .eyehide {
+    position: absolute;
+    padding-bottom: 0.5rem;
+    margin-top: 0.6rem;
+    margin-left: 36rem;
+  }
+  .login-link {
+    text-decoration: none; 
+    color: #007bff; 
+    font-weight: bold;
+  }
+  
+  .login-link:hover {
+    color: #0056b3; 
+  }

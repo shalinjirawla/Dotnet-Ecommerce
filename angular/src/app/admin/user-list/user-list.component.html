@@ -1,0 +1,23 @@
+<div class="container d-flex justify-content-center">
+  <h2 class="mb-4 mt-4 content">Users List</h2>
+</div>
+<div class="container">
+  <table class="table table-bordered text-center">
+    <thead class="table-dark">
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>MobileNumber</th>
+        <th>Role</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let user of usersList">
+      <tr>
+        <td>{{ user.name | titlecase }}</td>
+        <td>{{ user.email | titlecase }}</td>
+        <td>{{ user.mobileNumber }}</td> 
+        <td>{{ user.role | titlecase }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
